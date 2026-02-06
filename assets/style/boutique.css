@@ -1,0 +1,152 @@
+/* Réinitialisation et styles de base */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Maison Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* En-tête */
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #097A81; /* Couleur du logo Vinted */
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+    position: relative;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50% );
+    color: #999;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.auth-link, .help-link, .lang-link {
+    font-size: 14px;
+}
+
+.sell-button {
+    background-color: #097A81;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Navigation */
+.header-nav {
+    margin-top: 15px;
+}
+
+.header-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.header-nav ul li a {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Section principale (Hero) */
+.hero-section {
+    background-image: url('https://www.vinted.fr/assets/seller-promotion/other/banner_wide-645291f2382255437632454130f0ad4b60533593acdf353b7d455f4ead55950a.jpg' );
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.hero-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 350px;
+}
+
+.hero-content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    display: block;
+    background-color: #097A81;
+    color: #fff;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-secondary {
+    color: #097A81;
+    font-weight: bold;
+}
+
+/* Pied de page (Bannière d'information) */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+}
+
+.info-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.info-banner span {
+    cursor: pointer;
+    font-size: 20px;
+}

@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e88e5, #43a047);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.register-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.register-form h2 {
+    text-align: center;
+    color: #1e88e5;
+    margin-bottom: 25px;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1.8px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #43a047;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.checkbox-group a {
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #444;
+}
+
+.login-btn {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 6px 14px;
+    background: #1e88e5; /* bleu */
+    color: #fff;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #1565c0;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    background: #fb8c00;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ef6c00;
+}
+
+@media (max-width: 480px) {
+    .row {
+        flex-direction: column;
+    }
+}
