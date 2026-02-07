@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image" href="../assets/stockpro copie.svg">
+  <link rel="stylesheet" href="../assets/style/accueil.css">
   <title>Détails Produit - StockPro</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   <style>
@@ -15,8 +17,8 @@
       --border: #ddd;
     }
 
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: system-ui, sans-serif; color: var(--dark ); background: white; line-height: 1.6; padding-top: 80px; }
+    /* * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: system-ui, sans-serif; color: var(--dark ); background: white; line-height: 1.6; padding-top: 80px; } */
 
     .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
     
@@ -45,6 +47,7 @@
   </style>
 </head>
 <body>
+    <?php require_once  '../includes/header.php'; ?>
   <div class="container">
     <div class="product-layout">
       <div class="product-gallery">

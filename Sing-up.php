@@ -2,82 +2,123 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Inscription</title>
-    <link rel="icon" type="image" href="assets/stockpro copie.svg">
-    <link rel="stylesheet" href="./assets/style/sing-in.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - StockPro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <style>
+        :root {
+            --primary: #c8102e;
+            --primary-dark: #a00d24;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --border: #ddd;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background: var(--light ); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .auth-card {
+            background: white;
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        h2 { margin-bottom: 10px; color: var(--dark); }
+        p { color: #666; margin-bottom: 25px; font-size: 0.9rem; }
+
+        .form-group { text-align: left; margin-bottom: 15px; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        
+        label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.85rem; }
+        input {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        input:focus { outline: none; border-color: var(--primary); }
+
+        .terms { font-size: 0.8rem; color: #777; margin: 20px 0; text-align: left; }
+        .terms input { width: auto; margin-right: 8px; }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { background: var(--primary-dark); }
+
+        .footer-text { margin-top: 20px; font-size: 0.9rem; color: #666; }
+        .footer-text a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    </style>
 </head>
 <body>
-
-<div class="container">
-    <form class="register-form">
-        <h2>Se connecte</h2>
-
-        <form method="POST" action="">
-            <input type="hidden" name="action" value="signup">
-
-            <!-- <div class="row">
-                <div class="input-group">
-                    <i class="fas fa-user"></i>
-                    <input type="text" name="nom" placeholder="Nom" required>
-                </div>
-                <div class="input-group">
-                    <i class="fas fa-user"></i>
-                    <input type="text" name="prenom" placeholder="Prénom" required>
-                </div>
-            </div> -->
-
-            <!-- <div class="row">
-                <div class="input-group">
-                    <i class="fas fa-calendar-days"></i>
-                    <input type="date" name="date_naissance" required>
-                </div>
-                <div class="input-group">
-                    <i class="fas fa-venus-mars"></i>
-                    <select name="sexe" required>
-                        <option value="">Sexe</option>
-                        <option value="M">Masculin</option>
-                        <option value="F">Féminin</option>
-                    </select>
-                </div>
-            </div> -->
-
-            <!-- <div class="input-group">
-                <i class="fas fa-phone"></i>
-                <input type="tel" name="telephone" placeholder="Téléphone (facultatif)">
-            </div> -->
-
-            <div class="input-group">
-                <i class="fas fa-envelope"></i>
-                <input type="email" name="email" placeholder="Adresse email" required>
-            </div>
-
+    <div class="auth-card">
+        <a href="/" class="logo">StockPro</a>
+        <h2>Créer un compte</h2>
+        <p>Rejoignez la communauté StockPro dès aujourd'hui.</p>
+        
+        <form action="process-signup.php" method="POST">
             <div class="row">
-                <div class="input-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Mot de passe" minlength="8" required>
+                <div class="form-group">
+                    <label>Prénom</label>
+                    <input type="text" name="firstname" placeholder="Jean" required>
                 </div>
-                <div class="input-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" name="confirm_password" placeholder="Confirmation" required>
+                <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" name="lastname" placeholder="Dupont" required>
                 </div>
             </div>
-
             
-
-        <button type="submit">Se connecter</button>
-        <div class="checkbox-group">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a></label>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="votre@email.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" name="password" placeholder="Minimum 8 caractères" required>
             </div>
 
-        <p class="login-link">
-    Ta pas encore de compte ?
-    <a href="Sing-in.php" class="login-btn">S'inscrire</a>
-</p>
+            <div class="terms">
+                <label><input type="checkbox" required> J'accepte les <a href="#" style="color:var(--primary)">Conditions Générales</a> et la politique de confidentialité.</label>
+            </div>
 
-    </form>
-</div>
+            <button type="submit" class="btn-submit">S'inscrire</button>
+        </form>
 
+        <div class="footer-text">
+            Déjà un compte ? <a href="Sing-in.php">Se connecter</a>
+        </div>
+    </div>
 </body>
 </html>

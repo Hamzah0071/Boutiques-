@@ -9,9 +9,7 @@
 </head>
 <body>
 
-<header>
-  <!-- ton menu navigation ici -->
-</header>
+<?php require_once  './includes/header.php'; ?>
 
 <main class="produit-detail">
   <div class="gallery">
