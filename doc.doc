@@ -1,0 +1,89 @@
+user_client
+    user_client — panier
+
+        Un client a 0 ou 1 panier actif
+        Un panier appartient à 1 seul client
+
+        (1,1) côté panier
+        (0,1) côté client
+
+    user_client — commande
+
+        Un client peut faire 0 à N commandes
+
+        Une commande appartient à 1 seul client
+
+        (1,N)
+panier
+    panier — ligne_panier
+
+        Un panier contient 1 à N lignes
+
+        Une ligne_panier appartient à 1 seul panier
+
+        (1,N)
+
+    produit — ligne_panier
+
+        Un produit peut être dans 0 à N paniers
+
+        Une ligne_panier correspond à 1 seul produit
+
+        (1,N)
+commande
+    commande — ligne_commande
+
+        Une commande contient 1 à N lignes
+
+        Une ligne_commande appartient à 1 seule commande
+
+        (1,N)
+
+    produit — ligne_commande
+
+        Un produit peut être dans 0 à N commandes
+
+        Une ligne_commande correspond à 1 seul produit
+
+        (1,N)
+
+    commande — paiement
+
+        Une commande a 0 ou 1 paiement
+
+        Un paiement concerne 1 seule commande
+
+        (1,1) si paiement obligatoire
+        (0,1) si paiement peut être en attente
+
+    commande — livraison
+
+        Une commande a 1 livraison
+
+        Une livraison concerne 1 seule commande
+
+        (1,1)
+
+    categorie — produit
+
+        Une catégorie contient 0 à N produits
+
+        Un produit appartient à 1 seule catégorie
+
+        (1,N)
+
+=========== ou ==============
+
+user_client (1,N) commande
+user_client (1,1) panier
+
+panier (1,N) ligne_panier
+produit (1,N) ligne_panier
+
+commande (1,N) ligne_commande
+produit (1,N) ligne_commande
+
+commande (1,1) paiement
+commande (1,1) livraison
+
+categorie (1,N) produit

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>StockPro – Structure Base de Données</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>StockPro – Comprendre la base de données</h1>
+    <p>Visualisation simple des tables et de leurs rôles</p>
+</header>
+
+<main class="container">
+
+    <!-- USERS -->
+    <section class="card">
+        <h2>👤 users</h2>
+        <p>Stocke tous les utilisateurs :</p>
+        <ul>
+            <li>Clients</li>
+            <li>Vendeurs</li>
+            <li>Administrateurs</li>
+        </ul>
+        <p><strong>Relation :</strong> un utilisateur peut vendre des produits et passer des commandes</p>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="card">
+        <h2>📂 categories</h2>
+        <p>Classement des produits</p>
+        <ul>
+            <li>Catégories principales (Hommes, Femmes…)</li>
+            <li>Sous-catégories (Chemises, Robes…)</li>
+        </ul>
+        <p><strong>parent_id</strong> permet les sous-catégories</p>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="card">
+        <h2>📦 products</h2>
+        <p>Produits mis en vente par les vendeurs</p>
+        <ul>
+            <li>Lié à un vendeur (user_id)</li>
+            <li>Lié à une catégorie</li>
+            <li>Prix, état, localisation</li>
+        </ul>
+    </section>
+
+    <!-- PRODUCT IMAGES -->
+    <section class="card">
+        <h2>🖼️ product_images</h2>
+        <p>Images des produits</p>
+        <ul>
+            <li>Un produit → plusieurs images</li>
+            <li>Une image principale possible</li>
+        </ul>
+    </section>
+
+    <!-- ORDERS -->
+    <section class="card">
+        <h2>🧾 orders</h2>
+        <p>Commandes passées par les clients</p>
+        <ul>
+            <li>Client lié via client_id</li>
+            <li>Statut : payé, livré, annulé…</li>
+        </ul>
+    </section>
+
+    <!-- ORDER ITEMS -->
+    <section class="card">
+        <h2>📑 order_items</h2>
+        <p>Détails d’une commande</p>
+        <ul>
+            <li>Quels produits sont dans la commande</li>
+            <li>Prix au moment de l’achat</li>
+        </ul>
+    </section>
+
+    <!-- FAVORITES -->
+    <section class="card">
+        <h2>⭐ favorites</h2>
+        <p>Produits ajoutés en favoris</p>
+        <ul>
+            <li>Relation utilisateur ↔ produit</li>
+            <li>Clé primaire composée</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    <p>Projet StockPro – Base de données</p>
+</footer>
+
+</body>
+</html>

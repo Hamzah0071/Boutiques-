@@ -1,0 +1,55 @@
+-- 1. Table des Utilisateurs (pour Clients et Vendeurs)
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(100) NOT NULL,
+    lastname VARCHAR(200) NOT NULL,
+    email VARCHAR(200) NOT NULL UNIQUE,
+    password VARCHAR(50) NOT NULL,
+    phone VARCHAR(20),
+    address TEXT,
+    role ENUM('client', 'vendeur') DEFAULT 'client',
+);
+
+-- 2. Table des Catégories
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    -- Pour gérer les sous-catégories (ex: Hommes > Chemises)--
+    parent_id INT DEFAULT NULL, 
+    FOREIGN KEY (parent_id) REFERENCES categories(id) ON DELETE SET NULL
+);
+
+-- 3. Table des Produits
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL, -- Le vendeur ou client qui a posté l'article
+    category_id INT NOT NULL,
+    title VARCHAR(150) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL, -- Prix 
+    product_condition VARCHAR(50), -- Neuf, Très bon état, secondetc.
+    location VARCHAR(100),
+    status ENUM('disponible', 'vendu', 'reserve') DEFAULT 'disponible',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+-- 4. Table des Images Produits
+CREATE TABLE product_images (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    image_path VARCHAR(255) NOT NULL,
+    is_main BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+
+-- 5. Table des Commandes
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    client_id INT NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
+    status ENUM('en_attente', 'paye', 'en_cours', 'livre', 'annule') DEFAULT 'en_attente',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (client_id) REFERENCES users(id)
+);

@@ -17,7 +17,7 @@
     Livraison gratuite à Tana dès 150 000 Ar • -15% sur votre première commande avec le code BIENVENUE
   </div> -->
 
-  <!-- Navigation -->
+  <!-- Navigation fixe -->
   <?php require_once  '../includes/header.php'; ?>
   <!-- Hero -->
   <section class="hero">
@@ -28,7 +28,7 @@
     </div>
   </section>
 
-  <!-- Nouveautés -->
+  <!-- Nouveautés il peut etre changer par le vendeur -->
   <section>
     <h2>Nouveautés</h2>
     <div class="grid">
@@ -39,7 +39,7 @@
           <p class="price">68 000 Ar</p>
         </div>
       </div>
-      <!-- 5–7 cartes similaires -->
+      
       <div class="product-card">
         <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=500')"></div>
         <div class="product-info">
@@ -47,11 +47,11 @@
           <p class="price">52 000 Ar</p>
         </div>
       </div>
-      <!-- Ajoute 4–5 autres produits ici -->
+      
     </div>
   </section>
 
-  <!-- Promotions -->
+  <!-- Promotions meme chose -->
   <section style="background:#fff; padding:100px 20px;">
     <h2>Promotions – Jusqu’à -40%</h2>
     <div class="grid">
@@ -60,17 +60,8 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-links">
-      <a href="./commandes.php">Livraison & Retours</a>
-      <a href="/contact">Contact</a>
-      <a href="/cgv">Conditions Générales</a>
-      <a href="/mentions-legales">Mentions légales</a>
-      <a href="/confidentialite">Confidentialité</a>
-    </div>
-    <p>© 2026 MaBoutique – Antananarivo, Madagascar</p>
-  </footer>
+  <!-- Footer fixe -->
+  <?php require_once  '../includes/footer.php'; ?>
 
 </body>
 </html>
